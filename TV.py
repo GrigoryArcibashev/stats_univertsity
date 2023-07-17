@@ -83,24 +83,6 @@ class Frequencies:
                     linewidth=0.8)
 
 
-def draw_n_emp_and_n_th():
-    xx = [x for x in range(86, 100, 2)]
-    n_emp = [1, 6, 16, 29, 21, 10, 10]
-    n_th = [1.767, 6.231, 15.717, 24.552, 22.692, 15.345, 6.696]
-
-    fig2, ax2 = plt.subplots(1, 1)
-    plt.xlabel("x")
-    plt.ylabel("n")
-    ax2.plot(xx, n_emp, label="Эмпирические частоты")
-    ax2.plot(xx, n_th, label="Теоретические частоты")
-    for x in xx:
-        y_st = 0 if x < 90 else 5 if x < 96 else 2
-        ax2.plot(
-                [x, x], [y_st, 30], color="black", linestyle="--",
-                linewidth=0.8)
-    ax2.legend(loc="best", frameon=False)
-
-
 def main():
     SA = 92.86  # sample_average
     MSD = 2.83  # mean square deviation
